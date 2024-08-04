@@ -182,7 +182,7 @@
     #else:
         #print(f"{i} is a failing grade")
        
-    
+"""
 def menu():
     print("Menu:")
     print("1. Pepperoni Pizza - $10")
@@ -248,4 +248,137 @@ while user_exit != True:
         user_exit = True
         print("Thanks for stopping by!\n")
 
+ """
+
+#Write a function called remove_duplicates that takes a list as an argument and returns a new list with duplicate elements removed. 
+
+#def remove_duplicates(ls):
+    #new_ls=[]
+    #for i in ls:
+        #if i not in new_ls:
+            #new_ls.append(i)
+    #return new_ls
+
+#try:
+    #ls=[1,1,1,1,1,1,1,1,1,5,90,2,3,4,4,5,5,6]
+    #new_ls=remove_duplicates(ls)
+    #print(new_ls)
+#except:
+    #print("it didn't work")
+
+"""
+Problem Statement:
+You are tasked with creating a Movie Rental System. The system should allow users to:
+Add Movies: Add movies to the inventory.
+Search Movies: Search for movies by title or genre.
+Rent Movies: Rent out movies and update the inventory.
+Return Movies: Return movies and update the inventory
+Generate Rental Report: Provide a summary of rentals with the total revenue.
+Requirements 
+Movies can be stored in a list with just their titles. 
+When a user rents a movie, the movie should be removed from the list
+When a user returns a movie, it should be added back into the list
+When a user wants to search for a movie they should type the movie title and 
+A report should be generated for every movie that's been withdrawn or removed.
  
+Your program should take user input, use variables and use if and else statements.
+Loops (while and for) should be present. 
+Functions should be used to break apart task and input validation must be present. 
+Assume that there can only be one movie in the inventory at a time, there can be no duplicates. 
+"""
+
+
+
+def add_movie():
+    movies = ["ice age","end game","the joker","batman"]
+    x = True
+    print(movies)
+    while x == True:
+        add=str(input("Please input a movie or type '-1' when your finished:")).lower()
+        if add == '-1':
+            x = False
+        else:
+            movies.append(add)
+            print(movies)
+            x = True
+
+def search_movie():
+    x = True
+    while x == True:
+        find_movies=str(input("Please search for a movie:"))
+        if find_movies in set(movies):
+            print(f"{find_movies} is available for rental")
+        else:
+            print("We do not have this movie")
+            x=False
+
+def rent_movie():
+    user_active = True
+    while user_active == True:
+        user_input = str(input("Please type the movie you would like to rent or type 'done' when your finished:"))
+        user_input = user_input.lower()
+        if user_input == "done":
+            user_active = False
+        elif user_input in set (movies):
+            print(f"You have now rented the movie:{user_input}")
+            rented_list.append(rented_list)
+            
+        else:
+            user_input = str(input("This movies doesn't exist would you like to try rent again?"))
+            if user_input == 'Yes':
+                print("Please try rent again")
+                user_active = True
+            else:
+                user_active = False
+            
+def return_movie():
+    user_active = True
+    while user_active == True:
+        user_input= str(input("Please type the movie you would like to reutrn or type 'done' when your finished:"))
+        if user_input == "done":
+            user_active = False
+        elif user_input in set(movies):
+            print(f"You have now returned the movie: {user_input}")
+            return_list.append(return_list)
+        else:
+            user_input = str(input("This movies doesn't exist would you like to try return again?"))
+            if user_input == 'Yes':
+                print("Please try return again")
+                user_active = True
+            else:
+                user_active = False
+
+def rental_report():
+    for i in rented_list:
+        print("\n")
+        print("This movie was rented:")
+        print(i)
+    for i in return_list:
+        print("\n")
+        print("this movie was returned:")
+        print(i)
+
+return_list = []
+rented_list = []
+movies = []
+user_exit = False
+while user_exit != True:
+    print("Welcome to the Movies Reantals!")
+    print("Please pick what you would like to do!")
+    print("1.Add movie 2.Search movie 3.rent movie 4.return movie 5.submit retal report \n")
+    user_input = int(input("Your pick: \n"))
+    if user_input == 1:
+        movies=add_movie()
+    elif user_input == 2:
+        movies=search_movie()
+    elif user_input == 3:
+        if rent_movie:
+            rent_movie()
+        else:
+            print("Please Add a movie first")
+    elif user_input ==4:
+        return_movie() 
+    elif user_input == 5:
+        rental_report()
+        user_exit = True
+        print("Thanks for stopping in!\n")
