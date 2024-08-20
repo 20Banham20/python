@@ -1,3 +1,4 @@
+
 #decimal1=float(input("please give me a  decimal vaule to two dp"))
 #decimal2=float(input("please give me another decimal vaule to two dp"))
 #decimal3=(decimal1+decimal2 )
@@ -287,14 +288,15 @@ Functions should be used to break apart task and input validation must be presen
 Assume that there can only be one movie in the inventory at a time, there can be no duplicates. 
 """
 
-
+"""
 
 def add_movie():
     movies = ["ice age","end game","the joker","batman"]
     x = True
     print(movies)
     while x == True:
-        add=str(input("Please input a movie or type '-1' when your finished:")).lower()
+        add=str(input("Please input a movie or type '-1' when your \
+finished:")).lower()
         if add == '-1':
             x = False
         else:
@@ -306,7 +308,7 @@ def search_movie():
     x = True
     while x == True:
         find_movies=str(input("Please search for a movie:"))
-        if find_movies in set(movies):
+        if find_movies in (movies):
             print(f"{find_movies} is available for rental")
         else:
             print("We do not have this movie")
@@ -315,7 +317,8 @@ def search_movie():
 def rent_movie():
     user_active = True
     while user_active == True:
-        user_input = str(input("Please type the movie you would like to rent or type 'done' when your finished:"))
+        user_input = str(input("Please type the movie you would like \
+to rent or type 'done' when your finished:"))
         user_input = user_input.lower()
         if user_input == "done":
             user_active = False
@@ -324,7 +327,8 @@ def rent_movie():
             rented_list.append(rented_list)
             
         else:
-            user_input = str(input("This movies doesn't exist would you like to try rent again?"))
+            user_input = str(input("This movies doesn't exist would \
+you like to try rent again?"))
             if user_input == 'Yes':
                 print("Please try rent again")
                 user_active = True
@@ -334,14 +338,16 @@ def rent_movie():
 def return_movie():
     user_active = True
     while user_active == True:
-        user_input= str(input("Please type the movie you would like to reutrn or type 'done' when your finished:"))
+        user_input= str(input("Please type the movie you would like to \
+reutrn or type 'done' when your finished:"))
         if user_input == "done":
             user_active = False
         elif user_input in set(movies):
             print(f"You have now returned the movie: {user_input}")
             return_list.append(return_list)
         else:
-            user_input = str(input("This movies doesn't exist would you like to try return again?"))
+            user_input = str(input("This movies doesn't exist would \
+you like to try return again?"))
             if user_input == 'Yes':
                 print("Please try return again")
                 user_active = True
@@ -365,7 +371,8 @@ user_exit = False
 while user_exit != True:
     print("Welcome to the Movies Reantals!")
     print("Please pick what you would like to do!")
-    print("1.Add movie 2.Search movie 3.rent movie 4.return movie 5.submit retal report \n")
+    print("1.Add movie 2.Search movie 3.rent movie 4.return movie \
+5.submit retal report \n")
     user_input = int(input("Your pick: \n"))
     if user_input == 1:
         movies=add_movie()
@@ -382,3 +389,85 @@ while user_exit != True:
         rental_report()
         user_exit = True
         print("Thanks for stopping in!\n")
+
+"""
+"""
+import random
+
+def guess(x):
+    
+    Guess is the game where ypou guess 1-5
+    
+        number= random.randrange(1,5)
+    user_guess = 0    
+    win_conut = 0
+    while user_guess <= 3:
+            if x == 3:
+                print ("please try win 5 times")
+            if win_conut == 5:
+                print("try again")
+                break 
+            if x == number:
+                print("you have guessed the right number")
+                user_guess += 3
+                win_conut += 1
+            if win_conut == 5:
+                break
+            if x != number:
+                print("you have guess wrong")
+                x = int(input('please guess another number (1-5): '))
+                x + 1
+
+           
+
+num = int(input("please guess a number (1-5): "))
+guess(num)
+
+
+
+
+
+
+def addNumbers( a,b ) :
+    """
+    This adds vaules
+    """
+
+    result= a+b
+    return result
+
+def printMessage (name,age):
+    """
+    This will print their name and age
+    """
+    print("Hello, " + name + "! You are " + str(age) + " years old.")
+    
+def calcAreaCircle (r):
+    """
+    This will find the area of a circle
+    """
+    area=3.14*r*r
+    return area
+
+def checkAge(age): 
+    """
+    This will check if yours a adult
+    """
+    if age >= 18: 
+        print("You are an adult.") 
+    else: 
+        print("You are a minor.")
+  
+# main program starts here
+name="Alice";age=25
+printMessage(name,age) # passes thourgh the name and age
+checkAge(age)#passes through the age
+x=10;y=20
+sum = addNumbers(x,y)#passes through x and y
+print("The sum is:",sum)
+radius=5
+area =calcAreaCircle(radius) #passes through the radius
+print ("The area of the circle is:",area)
+
+
+"""
