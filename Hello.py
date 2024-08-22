@@ -288,7 +288,7 @@ Functions should be used to break apart task and input validation must be presen
 Assume that there can only be one movie in the inventory at a time, there can be no duplicates. 
 """
 
-"""
+
 
 def add_movie():
     movies = ["ice age","end game","the joker","batman"]
@@ -390,7 +390,7 @@ while user_exit != True:
         user_exit = True
         print("Thanks for stopping in!\n")
 
-"""
+
 """
 import random
 
@@ -429,30 +429,22 @@ guess(num)
 
 
 def addNumbers( a,b ) :
-    """
-    This adds vaules
-    """
+
 
     result= a+b
     return result
 
 def printMessage (name,age):
-    """
-    This will print their name and age
-    """
+
     print("Hello, " + name + "! You are " + str(age) + " years old.")
     
 def calcAreaCircle (r):
-    """
-    This will find the area of a circle
-    """
+
     area=3.14*r*r
     return area
 
 def checkAge(age): 
-    """
-    This will check if yours a adult
-    """
+
     if age >= 18: 
         print("You are an adult.") 
     else: 
